@@ -244,9 +244,9 @@ public class Resurrection : BaseUnityPlugin
 
 	private static void onRespawnClicked()
 	{
+		respawnDialog?.SetActive(false);
 		Player.m_localPlayer.GetRagdoll().DestroyNow();
 		Game.instance._RequestRespawn();
-		respawnDialog?.SetActive(false);
 	}
 
 	[HarmonyPatch(typeof(Menu), nameof(Menu.IsVisible))]
